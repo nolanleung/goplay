@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Autocomplete</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+    <script>
+        var require = {
+          paths: {
+            vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.0/min/vs",
+          },
+        };
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.0/min/vs/loader.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.0/min/vs/editor/editor.main.nls.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.0/min/vs/editor/editor.main.js"></script>  
+  </head>
+  <body>
+    <div id="container" style="height: 100vh;"></div>
+    <script type="application/javascript">
+      monaco.editor.create(document.getElementById("container"), {
+        value: `package main;
+
+import "fmt"
+        
+func main() {
+    fmt.Println("Hello, playground")
+}`,
+        language: "go",
+      });
+    </script>
+  </body>
+</html>
